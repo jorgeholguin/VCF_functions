@@ -355,10 +355,6 @@ def read_process_maf(file, variant='Missense_Mutation', consequence='missense_va
     
     # Open the MAF file
     df = pd.read_csv(file, sep = '\t', comment='#', low_memory=False)
-
-    # Subset the missense variants and somatic cancer variants
-#     df = df.loc[(df['Variant_Classification'] == variant) & (df['One_Consequence'] == consequence) 
-#                         & (df['Mutation_Status'] == 'Somatic') & (df['Variant_Type'] == variant_class)]
     
     # from https://docs.gdc.cancer.gov/Data/File_Formats/MAF_Format/#:~:text=46%20%2D%20all_effects,Sift%2CPolyPhen%2CStrand%5D)
     # added 'all_effects' to the end of each key to avoid column names already present in the MAF files
